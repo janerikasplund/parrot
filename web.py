@@ -25,7 +25,7 @@ def upload_file():
     return '''
     <!doctype html>
     <title>~*~*parrot*~*~</title>
-    <h1>upload new file</h1>
+    <h1>parrot transcription suite</h1>
     <form action="" method=post enctype=multipart/form-data>
       <p><input type=file name=file title=pick file>
          <input type=submit value=upload>
