@@ -4,7 +4,7 @@ from flask import Flask, request, redirect, url_for
 from werkzeug import secure_filename
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
-ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'm4a', '3gp', 'mp4', 'aac'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -33,7 +33,7 @@ def upload_file():
     '''
 from flask import send_from_directory
 
-@app.route('/uploads/<filename>')
+@app.route('/transcripts/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
