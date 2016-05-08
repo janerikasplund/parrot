@@ -1,0 +1,9 @@
+Flask
+gunicorn
+argparse
+base64
+json
+os
+discovery
+httplib2
+GoogleCredentials
