@@ -4,11 +4,11 @@ from flask import Flask, request, redirect, url_for, render_template
 from werkzeug import secure_filename
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
-ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'm4a', '3gp', 'mp4', 'aac'])
+ALLOWED_EXTENSIONS = set(['flac'])
+# ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'm4a', '3gp', 'mp4', 'aac'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -32,7 +32,6 @@ from flask import send_from_directory
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
-
-
+        
 if __name__ == '__main__':
     app.run()
