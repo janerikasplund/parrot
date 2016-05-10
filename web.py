@@ -2,6 +2,8 @@
 import os
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug import secure_filename
+import subprocess
+import sys
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
 ALLOWED_EXTENSIONS = set(['flac'])
@@ -21,8 +23,9 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+            subprocess.call[('sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True)]
+            # return redirect(url_for('uploaded_file',
+            #                        filename=filename))
 
     return render_template('hello.html')
    
@@ -34,4 +37,4 @@ def uploaded_file(filename):
                                filename)
         
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

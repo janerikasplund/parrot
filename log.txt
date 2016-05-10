@@ -1,0 +1,164 @@
+[2016-05-09 01:13:02 +0000] [3234] [INFO] Starting gunicorn 19.4.5
+[2016-05-09 01:13:02 +0000] [3234] [INFO] Listening at: http://127.0.0.1:8000 (3234)
+[2016-05-09 01:13:02 +0000] [3234] [INFO] Using worker: sync
+[2016-05-09 01:13:02 +0000] [3239] [INFO] Booting worker with pid: 3239
+[2016-05-09 01:13:24 +0000] [3234] [INFO] Handling signal: term
+[2016-05-09 01:13:24 +0000] [3239] [INFO] Worker exiting (pid: 3239)
+[2016-05-09 01:13:24 +0000] [3234] [INFO] Shutting down: Master
+[2016-05-09 01:20:49 +0000] [9585] [INFO] Starting gunicorn 19.4.5
+[2016-05-09 01:20:49 +0000] [9585] [INFO] Listening at: http://127.0.0.1:8000 (9585)
+[2016-05-09 01:20:49 +0000] [9585] [INFO] Using worker: sync
+[2016-05-09 01:20:49 +0000] [9590] [INFO] Booting worker with pid: 9590
+[2016-05-09 01:22:00 +0000] [9585] [INFO] Handling signal: hup
+[2016-05-09 01:22:00 +0000] [9585] [INFO] Hang up: Master
+[2016-05-09 01:22:00 +0000] [12118] [INFO] Booting worker with pid: 12118
+[2016-05-09 01:31:46 +0000] [9585] [INFO] Handling signal: hup
+[2016-05-09 01:31:46 +0000] [9585] [INFO] Hang up: Master
+[2016-05-09 01:31:46 +0000] [18248] [INFO] Booting worker with pid: 18248
+[2016-05-09 01:34:07 +0000] [9585] [INFO] Handling signal: hup
+[2016-05-09 01:34:07 +0000] [9585] [INFO] Hang up: Master
+[2016-05-09 01:34:07 +0000] [21779] [INFO] Booting worker with pid: 21779
+[2016-05-09 01:34:30 +0000] [9585] [INFO] Handling signal: hup
+[2016-05-09 01:34:30 +0000] [9585] [INFO] Hang up: Master
+[2016-05-09 01:34:30 +0000] [22640] [INFO] Booting worker with pid: 22640
+[2016-05-09 02:09:09 +0000] [13960] [INFO] Booting worker with pid: 13960
+[2016-05-09 02:09:09 +0000] [13960] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call(['sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True])
+                                                                                                             ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call(['sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True])
+                                                                                                             ^
+SyntaxError: invalid syntax
+[2016-05-09 02:09:09 +0000] [13960] [INFO] Worker exiting (pid: 13960)
+[2016-05-09 02:09:09 +0000] [9585] [INFO] Shutting down: Master
+[2016-05-09 02:09:09 +0000] [9585] [INFO] Reason: Worker failed to boot.
+[2016-05-09 02:09:54 +0000] [15610] [INFO] Starting gunicorn 19.4.5
+[2016-05-09 02:09:54 +0000] [15610] [INFO] Listening at: http://127.0.0.1:8000 (15610)
+[2016-05-09 02:09:54 +0000] [15610] [INFO] Using worker: sync
+[2016-05-09 02:09:54 +0000] [15615] [INFO] Booting worker with pid: 15615
+[2016-05-09 02:09:54 +0000] [15615] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call(['sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell = True])
+                                                                                                              ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call(['sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell = True])
+                                                                                                              ^
+SyntaxError: invalid syntax
+[2016-05-09 02:09:54 +0000] [15615] [INFO] Worker exiting (pid: 15615)
+[2016-05-09 02:09:54 +0000] [15610] [INFO] Shutting down: Master
+[2016-05-09 02:09:54 +0000] [15610] [INFO] Reason: Worker failed to boot.
+[2016-05-09 02:10:26 +0000] [16752] [INFO] Starting gunicorn 19.4.5
+[2016-05-09 02:10:26 +0000] [16752] [INFO] Listening at: http://127.0.0.1:8000 (16752)
+[2016-05-09 02:10:26 +0000] [16752] [INFO] Using worker: sync
+[2016-05-09 02:10:26 +0000] [16757] [INFO] Booting worker with pid: 16757
+[2016-05-09 02:11:22 +0000] [16752] [INFO] Handling signal: hup
+[2016-05-09 02:11:22 +0000] [16752] [INFO] Hang up: Master
+[2016-05-09 02:11:22 +0000] [18348] [INFO] Booting worker with pid: 18348
+[2016-05-09 02:12:07 +0000] [16752] [INFO] Handling signal: hup
+[2016-05-09 02:12:07 +0000] [16752] [INFO] Hang up: Master
+[2016-05-09 02:12:07 +0000] [19511] [INFO] Booting worker with pid: 19511
+[2016-05-09 02:12:07 +0000] [19511] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call[('sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True)]
+                                                                                                             ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/home/jan/parrot/web.py", line 26
+    subprocess.call[('sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True)]
+                                                                                                             ^
+SyntaxError: invalid syntax
+[2016-05-09 02:12:07 +0000] [19511] [INFO] Worker exiting (pid: 19511)
+[2016-05-09 02:12:07 +0000] [16752] [INFO] Shutting down: Master
+[2016-05-09 02:12:07 +0000] [16752] [INFO] Reason: Worker failed to boot.
