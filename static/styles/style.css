@@ -1,9 +1,25 @@
 #upload {
 	width: 50%;
 	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
+}
+
+#upload h1 {
+	font-weight: 400;
+}
+
+#upload h3 {
+	font-weight: 300;
 }
 
 #error {
 	width: 50%;
 	margin: 0 auto;
 }
+span.highlight {
+    background-color: yellow;
+}
+
+
+
+
