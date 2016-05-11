@@ -10,7 +10,7 @@ if not os.path.exists(os.environ['dir_name']):
 os.chdir(os.environ['dir_name'])
 
 for file in sorted(glob.glob(filename + "*.flac")):
-	 os.system('python speech_rest.py %s >>transcrip4.txt' % file)
-	 count += 1
-	 print "Working on file " + str(count) + "..."
-         time.sleep(50) 
+ os.system('python speech_rest.py %s >>transcrip4.txt' % file)
+ count += 1
+ print "Working on file " + str(count) + "..."
+         time.sleep(50)

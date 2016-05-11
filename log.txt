@@ -307,3 +307,15 @@ IndentationError: unexpected indent
 [2016-05-10 20:52:54 +0000] [27653] [INFO] Handling signal: hup
 [2016-05-10 20:52:54 +0000] [27653] [INFO] Hang up: Master
 [2016-05-10 20:52:54 +0000] [27662] [INFO] Booting worker with pid: 27662
+[2016-05-10 21:12:37 +0000] [27653] [INFO] Handling signal: hup
+[2016-05-10 21:12:37 +0000] [27653] [INFO] Hang up: Master
+[2016-05-10 21:12:37 +0000] [28944] [INFO] Booting worker with pid: 28944
+[2016-05-10 21:31:16 +0000] [27653] [CRITICAL] WORKER TIMEOUT (pid:28944)
+[2016-05-10 21:31:16 +0000] [28944] [INFO] Worker exiting (pid: 28944)
+[2016-05-10 21:31:16 +0000] [29805] [INFO] Booting worker with pid: 29805
+[2016-05-10 21:33:45 +0000] [27653] [CRITICAL] WORKER TIMEOUT (pid:29805)
+[2016-05-10 21:33:45 +0000] [29805] [INFO] Worker exiting (pid: 29805)
+[2016-05-10 21:33:45 +0000] [29929] [INFO] Booting worker with pid: 29929
+[2016-05-10 22:03:51 +0000] [27653] [CRITICAL] WORKER TIMEOUT (pid:29929)
+[2016-05-10 22:03:51 +0000] [29929] [INFO] Worker exiting (pid: 29929)
+[2016-05-10 22:03:51 +0000] [32290] [INFO] Booting worker with pid: 32290
