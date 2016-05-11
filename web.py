@@ -7,7 +7,6 @@ import sys
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
 ALLOWED_EXTENSIONS = set(['flac'])
-# ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'm4a', '3gp', 'mp4', 'aac'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -23,9 +22,8 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            subprocess.call[('sox', '/home/jan/parrot/songs/%s', '/home/jan/parrot/songs/edited/%s' % filename, shell=True)]
-            # return redirect(url_for('uploaded_file',
-            #                        filename=filename))
+            return redirect(url_for('uploaded_file',
+                                    filename=filename))
 
     return render_template('hello.html')
    
