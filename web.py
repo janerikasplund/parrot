@@ -26,22 +26,20 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('uploaded_file',
-            filename=filename))
-# def convert_file():
-#    if file.filename and allowed_file(file.filename):
-#        os.chdir("home/jan/parrot/songs")
-#        for file.filename in sorted(glob.glob(file.filename + "*.flac")):
-#            os.system('sox %s --channels=1 12.flac')
-
+            for file.filename in sorted(glob.glob("/home/jan/parrot/songs/*.flac")):
+                os.system('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s -q trim 0 50 : newfile : restart' % (filename, filename))
+                return render_template('hello2.html')
     return render_template('hello.html')
 
-from flask import send_from_directory
 
-@app.route('/transcripts/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+
+
+# from flask import send_from_directory
+
+#@app.route('/transcripts/<filename>')
+#def uploaded_file(filename):
+#    return send_from_directory(app.config['UPLOAD_FOLDER'],
+#                               filename)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,15 @@
+ <!doctype html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}"/>
+    </head>
+    <title>~*~*parrot*~*~</title>
+    <div id="upload" name="upload" title="upload">
+    <h1>Parrot Transcription Success!</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type="file" name="file" id="file" class="inputfile" />
+         <input type=submit value=Upload></p>
+    </form>
+        <h3><span class="highlight">We did it!</span class></h3>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
