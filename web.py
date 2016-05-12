@@ -3,7 +3,7 @@ file to the server and then have it
 processed into a Google Cloud API-friendly
 FLAC file"""
 
-import glob
+import glob, time
 import os
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
@@ -27,7 +27,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             for file.filename in sorted(glob.glob("/home/jan/parrot/songs/*.flac")):
-                os.system('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s -q trim 0 50 : newfile : restart' % (filename, filename))
+                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s -q trim 0 50 : newfile : restart' % (filename, filename), shell=True)
                 return render_template('hello2.html')
     return render_template('hello.html')
 
