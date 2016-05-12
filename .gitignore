@@ -3,6 +3,7 @@
 *.log
 *.sql
 *.sqlite
+*.pyc
 
 # OS generated files #
 ######################
@@ -17,7 +18,6 @@ Thumbs.db
 #  Config   #
 #############
 *.conf.py
-test.py
 speech-discovery_google_rest_v1.json
 parakeet-31303c20120d.json
 /venv/*
