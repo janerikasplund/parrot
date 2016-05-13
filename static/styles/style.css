@@ -6,23 +6,29 @@
 #parrot {
 	padding-top: 40px;
 	width: 174px;
+	padding-left: 230px;
 }
 
 #upload {
 	width: 500px;
 	margin-left: 20px;
-	font-family: 'Roboto', sans-serif;
-	padding-top: 30px;
+	padding-top: 74px;
 }
 
 #upload h1 {
-	font-weight: 700;
+	font-weight: 400;
+	font-family: 'Vollkorn';
+	font-size: 60px;
+	line-height: .5em;
 }
 
 #upload h3 {
-	font-weight: 300;
+	font-weight: 400;
+	font-family: 'Vollkorn', sans-serif;
 }
-
+#upload p {
+	font-family: 'Vollkorn', sans-serif;
+}
 span.highlight {
     background-color: yellow;
 }
