@@ -1,7 +1,18 @@
+
+#parent {
+	display: flex;
+}
+
+#parrot {
+	padding-top: 40px;
+	width: 174px;
+}
+
 #upload {
-	width: 50%;
-	margin: 0 auto;
+	width: 500px;
+	margin-left: 20px;
 	font-family: 'Roboto', sans-serif;
+	padding-top: 30px;
 }
 
 #upload h1 {
@@ -12,14 +23,6 @@
 	font-weight: 300;
 }
 
-#error {
-	width: 50%;
-	margin: 0 auto;
-}
 span.highlight {
     background-color: yellow;
 }
-
-
-
-

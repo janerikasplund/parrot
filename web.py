@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
-ALLOWED_EXTENSIONS = set(['flac', '.vimrc', '.bashrc'])
+ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'wav'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -25,9 +25,10 @@ def upload_file():
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            stringname, file_extension = os.path.splitext(filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            for file.filename in sorted(glob.glob("/home/jan/parrot/songs/*.flac")):
-                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s -q trim 0 50 : newfile : restart' % (filename, filename), shell=True)
+            for file.filename in sorted(glob.glob("/home/jan/parrot/songs/%s" % filename)):
+                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s.flac -q trim 0 50 : newfile : restart' % (filename, stringname), shell=True)
                 return render_template('hello2.html')
     return render_template('hello.html')
 

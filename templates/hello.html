@@ -3,13 +3,17 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
         <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}"/>
     </head>
-    <title>~*~*parrot*~*~</title>
-    <div id="upload" name="upload" title="upload">
-    <h1>Parrot Upload</h1>
-    <form action="" method=post enctype=multipart/form-data>
-      <p><input type="file" name="file" id="file" class="inputfile" />
-         <input type=submit value=Upload></p>
+<div id="parent" name="parent" title="parent">
+<div id="parrot" name="parrot" title="parrot">
+<img src="{{ url_for('static', filename = 'parrot2.png') }}" width='174px' height='174px'>
+</div><div id="upload" name="upload" title="upload">
+    <h1>parrot</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+      <p><input type="file" name="file" id="file" class="inputfile">
+         <input type="submit" value="Upload"></p>
     </form>
-	<h3><span class="highlight">Uploaded files must be in .FLAC format!</span class></h3>
-    </div>
+    <h3><span class="highlight"><strong>supported filetypes:</strong> flac, wav, mp3</span></h3>
+    <h3>upload the audio from a call, feedback session, team meeting, lunchtime learning, etc. and it'll be uploaded (done), converted (done), transcribed (working on it), and emailed to you (coming soon!!)</h3>
+    <p>jan</p>
+  </div></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
