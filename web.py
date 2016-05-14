@@ -28,7 +28,8 @@ def upload_file():
             stringname, file_extension = os.path.splitext(filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             for file.filename in sorted(glob.glob("/home/jan/parrot/songs/%s" % filename)):
-                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s.flac -q trim 0 50 : newfile : restart' % (filename, stringname), shell=True)
+                subprocess.call('mkdir /home/jan/parrot/songs/%s' % stringname, shell=True)
+                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s/%s.flac -q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
                 return render_template('hello2.html')
     return render_template('hello.html')
 
