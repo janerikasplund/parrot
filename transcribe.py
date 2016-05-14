@@ -30,7 +30,7 @@ def upload_file():
                 os.chdir("/home/jan/parrot/songs/%s" % stringname)
             for file in sorted(glob.glob(stringname + "0*.flac")):
                 subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, stringname), shell=True)
-                time.sleep(10)
+                time.sleep(20)
             return render_template('hello2.html')
     return render_template('hello.html')
 
@@ -38,6 +38,7 @@ def upload_file():
 
 
 # from flask import send_from_directory
+
 #@app.route('/transcripts/<filename>')
 #def uploaded_file(filename):
 #    return send_from_directory(app.config['UPLOAD_FOLDER'],
