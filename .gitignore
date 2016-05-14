@@ -5,6 +5,7 @@
 *.sqlite
 *.pyc
 
+
 # OS generated files #
 ######################
 .DS_Store
@@ -20,13 +21,7 @@ Thumbs.db
 *.conf.py
 speech-discovery_google_rest_v1.json
 parakeet-31303c20120d.json
-/venv/*
-/songs/*
-ey*
-fell*
-log*
 songs
 venv
 requirements
-speech*
-transcr*
+speech_rest.py
