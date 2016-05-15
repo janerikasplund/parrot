@@ -41,13 +41,16 @@ def upload_file():
                 # create a new directory with the filename title
                 subprocess.call('mkdir /home/jan/parrot/songs/%s' % stringname, shell=True)
                 # converts uploaded file into a series of 16-bit, mono flac files, each totaling 50 seconds or less
-                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s/%s.flac -q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
+                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s/%s.flac \
+				-q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
                 # change the working directory to the directory we created
                 os.chdir("/home/jan/parrot/songs/%s" % stringname)
                 # iterates over every file in the working directory with the wildcard name sox creates
                 for file in sorted(glob.glob(stringname + "0*.flac")):
                 # now we run each file in the working directory through speech_rest.py
-                    subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, stringname), shell=True)
+                    subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
+				    >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, \
+				    stringname), shell=True)
                     global count
                     count += 1
                 # wait a little bit thanks to Google's usage limits!
@@ -55,7 +58,8 @@ def upload_file():
                     print  "Working on file " + str(count) + "..."
                     for file in sorted(glob.glob("/home/jan/parrot/songs/%s/%s-transcript.txt" % (stringname, stringname))):
                 # move the transcript to flask's static directory, from which it can be served
-                        subprocess.call('mv /home/jan/parrot/songs/%s/%s-transcript.txt /home/jan/parrot/static/%s-transcript.txt' % (stringname, stringname, stringname), shell=True)
+                        subprocess.call('mv /home/jan/parrot/songs/%s/%s-transcript.txt /home/jan/parrot/static/%s-transcript.txt' \
+					% (stringname, stringname, stringname), shell=True)
                         transcription = '%s-transcript.txt' % stringname
                         return redirect(url_for('transcribed_file', transcription=transcription))
 
