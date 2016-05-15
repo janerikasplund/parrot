@@ -41,7 +41,8 @@ def upload_file():
                 # create a new directory with the filename title
                 subprocess.call('mkdir /home/jan/parrot/songs/%s' % stringname, shell=True)
                 # converts uploaded file into a series of 16-bit, mono flac files, each totaling 50 seconds or less
-                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s/%s.flac -q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
+                subprocess.call('sox /home/jan/parrot/songs/%s --channels=1 --bits=16 /home/jan/parrot/songs/%s/%s.flac \
+				-q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
                 # change the working directory to the directory we created
                 os.chdir("/home/jan/parrot/songs/%s" % stringname)
                 # iterates over every file in the working directory with the wildcard name sox creates
