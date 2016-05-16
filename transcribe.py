@@ -50,7 +50,7 @@ def upload_file():
                 # now we run each file in the working directory through speech_rest.py
                     subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
 				    >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, \
-				    stringname), shell=True)
+                                    stringname), shell=True)
                     global count
                     count += 1
                 # wait a little bit thanks to Google's usage limits!
@@ -60,15 +60,16 @@ def upload_file():
                 # move the transcript to flask's static directory, from which it can be served
                         subprocess.call('mv /home/jan/parrot/songs/%s/%s-transcript.txt /home/jan/parrot/static/%s-transcript.txt' \
 					% (stringname, stringname, stringname), shell=True)
-                        transcription = '%s-transcript.txt' % stringname
-                        return redirect(url_for('transcribed_file', transcription=transcription))
+                        transcription = '/home/jan/parrot/static/%s-transcript.txt' % stringname
+                        transopen = open(transcription)
+                        transtext = transopen.read()
+                        return render_template('hello2.html', my_string="%s" % transtext)
+                     #  return redirect(url_for('transcribed_file', transtext=transtext))
 
-@app.route('/<transcription>')
-def transcribed_file(transcription):
-    return send_from_directory(app.config['TRANSCRIPT_FOLDER'],
-                              transcription)
-
-#            return render_template('hello2.html', my_string="%s" % stringname)
+# @app.route('/<transcription>')
+# def transcribed_file(transtext):
+#     return send_from_directory(app.config['TRANSCRIPT_FOLDER'],
+#                               transtext)
 
 if __name__ == '__main__':
     app.run(debug=True)
