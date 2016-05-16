@@ -45,17 +45,20 @@ def upload_file():
 				-q trim 0 50 : newfile : restart' % (filename, stringname, stringname), shell=True)
                 # change the working directory to the directory we created
                 os.chdir("/home/jan/parrot/songs/%s" % stringname)
+                global count
+                onlyfiles = next(os.walk("/home/jan/parrot/songs/%s" % stringname))[2] #dir is your directory path as string
+                tally = len(onlyfiles)
+                while count < tally:
                 # iterates over every file in the working directory with the wildcard name sox creates
-                for file in sorted(glob.glob(stringname + "0*.flac")):
+                    for file in sorted(glob.glob(stringname + "0*.flac")):
                 # now we run each file in the working directory through speech_rest.py
-                    subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
+                        subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
 				    >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, \
                                     stringname), shell=True)
-                    global count
-                    count += 1
+                        count += 1
+                        print  "Working on file " + str(count) + "..."
                 # wait a little bit thanks to Google's usage limits!
-                    time.sleep(5)
-                    print  "Working on file " + str(count) + "..."
+                        time.sleep(5)
                     for file in sorted(glob.glob("/home/jan/parrot/songs/%s/%s-transcript.txt" % (stringname, stringname))):
                 # move the transcript to flask's static directory, from which it can be served
                         subprocess.call('mv /home/jan/parrot/songs/%s/%s-transcript.txt /home/jan/parrot/static/%s-transcript.txt' \
