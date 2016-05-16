@@ -1,5 +1,0 @@
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.70361614, "transcript": "but right now I just changed it just for the front and I thank God you came how many more days but I will make plans with you and I won't let him fall"}], "isFinal": true}]}]}
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.68390089, "transcript": "control control control control like when I get to go so go faster light control control control control and I always think I do"}], "isFinal": true}]}]}
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.79730403, "transcript": "smiling back when a pretty girl and I love you thinking I Died For You Jodeci Cry for you to think when you want me to light control control control control"}], "isFinal": true}]}]}
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.53623283, "transcript": "my new place now and that's why I mean to me"}], "isFinal": true}]}]}
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.65693575, "transcript": "my name is"}], "isFinal": true}]}]}
