@@ -1,1 +1,0 @@
-{"responses": [{"results": [{"alternatives": [{"confidence": 0.84350532, "transcript": "what are the one thing that I done that makes you think I want to have sex with you I'm talking to you to talk crazy"}], "isFinal": true}]}]}
