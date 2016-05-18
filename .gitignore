@@ -24,4 +24,4 @@ parakeet-31303c20120d.json
 songs
 venv
 requirements
-speech_rest.py
+static/*.txt
