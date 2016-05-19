@@ -43,17 +43,20 @@ def upload_file():
                 while count < tally:
                     for file in sorted(glob.glob(stringname + "0*.flac")):
                         subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
-				    >>/home/jan/parrot/songs/%s/%s-transcript.txt' % (stringname, file, stringname, \
-                                    stringname), shell=True)
+				    >>/home/jan/parrot/static/%s-transcript.txt &' % (stringname, file, stringname), shell=True)
                         count += 1
+                        time.sleep(5)
                         print  "Working on file " + str(count) + "..."
-                    for file in sorted(glob.glob("/home/jan/parrot/songs/%s/%s-transcript.txt" % (stringname, stringname))):
-                        subprocess.call('mv /home/jan/parrot/songs/%s/%s-transcript.txt /home/jan/parrot/static/%s-transcript.txt' \
-					% (stringname, stringname, stringname), shell=True)
-                        transcription = '/home/jan/parrot/static/%s-transcript.txt' % stringname
-                        transopen = open(transcription)
-                        transtext = transopen.read()
-                        return render_template('hello2.html', my_string="%s" % transtext)
+                time.sleep(10)
+                print "Waiting..."
+                global transname
+                transname = ('%s-transcript.txt' % stringname)
+                return redirect(url_for('transcribed_file',
+                                         transname=transname))
+
+@app.route('/beak/')
+def transcribed_file():
+    return send_from_directory('/home/jan/parrot/static/', transname)
 
 if __name__ == '__main__':
     app.run(debug=True)
