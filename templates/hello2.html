@@ -4,6 +4,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>	
         <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     </head>
 <div id="parent" name="parent" title="parent">
 <div id="parrot" name="parrot" title="parrot">
@@ -15,6 +17,20 @@
          <input type="submit" value="Upload"></p>
     </form>
     <h3><span class="highlight">success!</span></h3>
-    <h3>{{my_string}}</h3>
+      <div id="btn" data-clipboard-target="#transcript">
+        <span><h3>copy to clipboard</h3></span>
+    </div>
+    <script>
+	    var btn = document.getElementById('btn');
+	    var clipboard = new Clipboard(btn);
+	    clipboard.on('success', function(e) {
+		console.log(e);
+	    });
+	    clipboard.on('error', function(e) {
+		console.log(e);
+	    });
+    </script>
+    <textarea id="transcript">{{my_string}}</textarea>
+    <script>$("textarea").resizable();</script>
   </div></div>
 

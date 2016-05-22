@@ -32,3 +32,11 @@
 span.highlight {
     background-color: yellow;
 }
+#transcript {
+	background-color: black;
+	color: white;
+	min-height: 500px;
+	min-width: 800px;
+}
+
+
