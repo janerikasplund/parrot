@@ -79,14 +79,12 @@ def main(speech_file):
     response = service_request.execute()
     jresponse = (json.dumps(response))
     str = jresponse
-    match = re.search('("transcript": ")(.+)("})', str)
+    match = re.search('(transcript": )(["\s])(.+?(?="))', str)
     if match:
-        print match.group(2)
+        print match.group(3)
     else:
         print(jresponse)
     # [END send_request]
-
-
 
 # [START run_application]
 if __name__ == '__main__':

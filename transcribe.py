@@ -6,6 +6,7 @@ FLAC file"""
 import glob, time, os, subprocess
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory
 from werkzeug.utils import secure_filename
+import pdb
 
 UPLOAD_FOLDER = '/home/jan/parrot/songs/'
 ALLOWED_EXTENSIONS = set(['flac', 'mp3', 'wav'])
@@ -49,14 +50,17 @@ def upload_file():
                         print  "Working on file " + str(count) + "..."
                 time.sleep(10)
                 print "Waiting..."
-                global transname
-                transname = ('%s-transcript.txt' % stringname)
-                return redirect(url_for('transcribed_file',
-                                         transname=transname))
+#                transname = ('%s-transcript.txt' % stringname)
+#                return redirect(url_for('transcribed_file', transname=transname)) 
+                transcription = '/home/jan/parrot/static/%s-transcript.txt' % stringname
+		transopen = open(transcription)
+		transtext = transopen.read()
+		return render_template('hello2.html', my_string="%s" % transtext)
 
-@app.route('/beak/')
-def transcribed_file():
-    return send_from_directory('/home/jan/parrot/static/', transname)
+# @app.route('/uploads/<transname>/')
+# def transcribed_file(transname):
+#     return send_from_directory(app.config['TRANSCRIPT_FOLDER'],
+#					  transname)
 
 if __name__ == '__main__':
     app.run(debug=True)

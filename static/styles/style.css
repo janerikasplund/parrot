@@ -6,7 +6,7 @@
 #parrot {
 	padding-top: 40px;
 	width: 174px;
-	padding-left: 230px;
+	padding-left: 100px;
 }
 
 #upload {
@@ -19,7 +19,7 @@
 	font-weight: 400;
 	font-family: 'Vollkorn';
 	font-size: 60px;
-	line-height: .5em;
+	line-height: 1em;
 }
 
 #upload h3 {
