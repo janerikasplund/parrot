@@ -41,6 +41,7 @@ def upload_file():
                 global count
                 onlyfiles = next(os.walk("/home/jan/parrot/songs/%s" % stringname))[2]
                 tally = len(onlyfiles)
+		# need to fix the bug where the last line ends up on top as the first line, maybe by tinkering with the count fuinction
                 while count < tally:
                     for file in sorted(glob.glob(stringname + "0*.flac")):
                         subprocess.call('python /home/jan/parrot/speech_rest.py /home/jan/parrot/songs/%s/%s \
@@ -48,7 +49,7 @@ def upload_file():
                         count += 1
                         time.sleep(5)
                         print  "Working on file " + str(count) + "..."
-                time.sleep(10)
+                time.sleep(50)
                 print "Waiting..."
 #                transname = ('%s-transcript.txt' % stringname)
 #                return redirect(url_for('transcribed_file', transname=transname)) 
