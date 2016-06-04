@@ -8,11 +8,11 @@
 <div id="parrot" name="parrot" title="parrot">
 <img src="{{ url_for('static', filename = 'parrot2.png') }}" width='174px' height='174px'>
 </div><div id="upload" name="upload" title="upload">
-    <h1>parrot</h1>
+    <h1>what do you want to transcribe?</h1>
+    <h3><span class="highlight">it's got to be a .flac, .wav, or .mp3 audio file</span></h3>
     <form action="upload" method="post" enctype="multipart/form-data">
       <p><input type="file" name="file" id="file" class="inputfile">
          <input type="submit" value="Upload"></p>
     </form>
-    <h3><span class="highlight">currently supported filetypes: flac, wav, mp3</span></h3>
   </div></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

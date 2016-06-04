@@ -6,6 +6,7 @@
 *.pyc
 bin
 lib
+*.json
 
 # OS generated files #
 ######################
